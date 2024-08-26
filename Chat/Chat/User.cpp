@@ -12,3 +12,8 @@ User::User()
 	std::cout << "¬ведите вашу ‘амилию: " << std::endl;
 	std::cin >> _surname;
 };
+
+void User::getInfoUser() 
+{
+	std::cout << _login << std::endl;
+}
