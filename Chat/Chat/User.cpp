@@ -13,7 +13,7 @@ User::User()
 	std::cin >> _surname;
 };
 
-void User::getInfoUser() 
+std::string User::getLogin() 
 {
-	std::cout << _login << std::endl;
+	return _login;
 }

@@ -7,10 +7,7 @@ class User
 public:
 
 	User();
-
-	void getInfoUser();
-	
-
+	std::string getLogin();
 	~User() = default;
 
 private:
