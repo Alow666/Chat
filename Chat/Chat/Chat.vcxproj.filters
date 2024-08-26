@@ -26,7 +26,7 @@
     <ClInclude Include="User.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
-    <ClInclude Include="Funkc.h">
+    <ClInclude Include="Functions.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
   </ItemGroup>

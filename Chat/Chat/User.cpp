@@ -6,7 +6,7 @@ User::User()
 	std::cout << "¬ведите логин: " << std::endl;
 	std::cin >> _login;
 	std::cout << "¬ведите пароль: " << std::endl;
-	std::cin >> _pasword;
+	std::cin >> _password;
 	std::cout << "¬ведите ваше им€: " << std::endl;
 	std::cin >> _name;
 	std::cout << "¬ведите вашу ‘амилию: " << std::endl;
@@ -16,4 +16,9 @@ User::User()
 std::string User::getLogin() 
 {
 	return _login;
+}
+
+std::string User::getPassword()
+{
+	return _password;
 }
