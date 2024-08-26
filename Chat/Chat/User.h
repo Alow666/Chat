@@ -6,7 +6,7 @@ class User
 {
 public:
 
-	User(std::string pasword, std::string login, std::string name, std::string surname);
+	User();
 
 	void setUser() 
 	{
