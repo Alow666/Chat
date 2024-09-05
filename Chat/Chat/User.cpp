@@ -22,3 +22,27 @@ std::string User::getPassword()
 {
 	return _password;
 }
+std::string User::getName()
+{
+	return _name;
+}
+std::string User::getSuename()
+{
+	return _surname;
+}
+void User::setLogin(std::string login)
+{
+	_login = login ;
+}
+void User::setPassword(std::string password)
+{
+	_password = password;
+}
+void User::setName(std::string name)
+{
+	_name = name;
+}
+void User::setSurname(std::string surname)
+{
+	_surname = surname;
+}

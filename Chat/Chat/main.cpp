@@ -4,26 +4,23 @@
 #include "User.h"
 #include "Entrance.h"
 
-
-
 int main()
 {
 	setlocale(LC_ALL, "Rus");
-	int a;
-	bool exit = true;
-	bool exit2 = false;
+	int сhoice;
+	bool permission_to_enter = false;
 	std:: vector <User> vectorUser; //Вектор с пользователями
-	std::unique_ptr<Entrance> ptr_Vxod = std::make_unique <Entrance>();// надо походу обычное выделение
+	std::unique_ptr<Entrance> ptr_entrance = std::make_unique <Entrance>();// вход в учетки
 
 
 	std::cout << "Добро пожаловать в чат!" << std::endl;
 
-	while (exit)
+	while (true)
 	{
 		std::cout << "1)Войти в аккаунт \n2)Зарегистрировать аккаунт \n3)Выйти" << std::endl;
-		std::cin >> a;
+		std::cin >> сhoice;
 
-		switch (a)
+		switch (сhoice)
 	{
 		case 1:
 			if (vectorUser.size() == 0)//Проверка наличия пользователей
@@ -32,16 +29,16 @@ int main()
 				continue;
 			}
 
-			exit2 = ptr_Vxod->entranceLogin(vectorUser);
+			permission_to_enter = ptr_entrance->entranceLogin(vectorUser);//проверка логина
 
-			if (exit2 == false)
+			if (permission_to_enter == false)//
 			{
 				continue;
 			}
 
-			exit2 = ptr_Vxod->entrancePassword(vectorUser);
+			permission_to_enter = ptr_entrance->entrancePassword(vectorUser);//
 
-			while (exit2) // Управление учеткой 
+			while (permission_to_enter) // Управление учеткой 
 			{
 				
 
@@ -51,21 +48,16 @@ int main()
 				
 			}
 			continue;
-
-
-
-
 		case 2:
 			vectorUser.push_back(User());
 			std::cout << "Теперь вы можете войти в аккаунт." << std::endl;
 			continue;
 		case 3:
 			std::cout << "До скорой встречи!" << std::endl;
-			exit = false;
 			break;
 		default:
 			std::cout << "Выберите что то из списка !" << std::endl;
-			break;
+			continue;
 		}
 	}
 
