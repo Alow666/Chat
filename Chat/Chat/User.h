@@ -7,9 +7,10 @@ class User
 public:
 
 	User();
+	~User() = default;
 	std::string getLogin();
 	std::string getPassword();
-	~User() = default;
+	
 
 private:
 

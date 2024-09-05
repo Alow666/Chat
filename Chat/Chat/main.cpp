@@ -2,17 +2,21 @@
 #include <vector>
 
 #include "User.h"
-#include "Functions.h"
+#include "Entrance.h"
+
+
 
 int main()
 {
 	setlocale(LC_ALL, "Rus");
-	short int a,b;
-	std::string loginScan;
-	std::string passwordScan;
-	bool exit = true, exit2 = true;
+	int a;
+	bool exit = true;
+	bool exit2 = false;
+	std:: vector <User> vectorUser; //Вектор с пользователями
+	std::unique_ptr<Entrance> ptr_Vxod = std::make_unique <Entrance>();// надо походу обычное выделение
+
+
 	std::cout << "Добро пожаловать в чат!" << std::endl;
-	std:: vector <User> vectorUser;
 
 	while (exit)
 	{
@@ -20,14 +24,37 @@ int main()
 		std::cin >> a;
 
 		switch (a)
-		{
+	{
 		case 1:
-			while (exit2)
+			if (vectorUser.size() == 0)//Проверка наличия пользователей
+			{
+				std::cout << "В чате еще никого нету(" << std::endl;
+				continue;
+			}
+
+			exit2 = ptr_Vxod->entranceLogin(vectorUser);
+
+			if (exit2 == false)
+			{
+				continue;
+			}
+
+			exit2 = ptr_Vxod->entrancePassword(vectorUser);
+
+			while (exit2) // Управление учеткой 
 			{
 				
-				
+
+
+
+			
 				
 			}
+			continue;
+
+
+
+
 		case 2:
 			vectorUser.push_back(User());
 			std::cout << "Теперь вы можете войти в аккаунт." << std::endl;
